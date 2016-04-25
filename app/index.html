@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html data-ng-app="customersApp">
+<head>
+    <title>Customer Manager</title>
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="styles/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="styles/customerManagementStyles.css" rel="stylesheet" />
+</head>
+<body>
+
+     <div ng-view></div>
+
+
+    <!-- Vendor Libs: jQuery only used for Bootstrap functionality -->
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="../node_modules/angular-route/angular-route.js"></script>
+    <script src="../bower_components/angular-resource/angular-resource.js"></script>
+    <script src="../bower_components/jquery/jquery.min.js"></script>
+
+    <!-- UI Libs -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+
+    <!-- App libs -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/module/header/header.directive.js"></script>
+    <script src="scripts/common/controllers.js"></script>
+    <script src="scripts/module/login/login.services.js"></script>
+    <script src="scripts/module/login/login.controller.js"></script>
+    <!--<script src="scripts/module/logout/logout.controller.js"></script>-->
+    <script src="scripts/module/customer/customer.controller.js"></script>
+    <script src="scripts/module/customer/customer.directive.js"></script>
+    <script src="scripts/module/orders/orders.controller.js"></script>
+    <script src="scripts/module/orders/customer-order.controller.js"></script>
+    <script src="scripts/module/customer/customer.service.js"></script>
+</body>
+</html>

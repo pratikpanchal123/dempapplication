@@ -1,0 +1,26 @@
+<div class="modal-header">
+  <h4 class="modal-title">Attachment</h4>
+</div>
+<div class="modal-body">
+  <div class="form-group">
+    <label>Description:</label>
+    <div>
+      <textarea id="descModal" ng-model="fileUploadOptions.notetext"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="fileinput fileinput-new input-group" data-provides="fileinput">
+      <div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i>  <span class="fileinput-filename"></span>
+      </div>
+      <span class="input-group-addon btn btn-default btn-file">
+        <span class="fileinput-new">Select to Upload file</span>
+        <input id="fileupload" file-upload="fileUploadOptions" type="file" name="attData" multiple data-sequential-uploads="true" />
+      </span>
+    </div>
+  </div>
+  <progressbar max="100" value="fileUploadOptions.progress" type="success">{{fileUploadOptions.progress}} %</progressbar>
+  <div id="files" class="files"></div>
+</div>
+<div class="modal-footer">
+  <button ng-click="closeModal()" class="btn btn-warning">Cancel</button>
+</div>

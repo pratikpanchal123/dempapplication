@@ -1,0 +1,51 @@
+<div class="customers view">
+    <div class="container">
+        <header>
+            <h3>Customers</h3>
+        </header>
+        <br/><br/>
+        <uib-alert dismiss-on-timeout = "1000" ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.message}}</uib-alert>
+        <button id="submitCustomer" class="btn btn-primary" type="button"  ng-click="open()">Add Customer</button>
+        <!-- <div class="row">
+            <div class="span3">
+                First Name:
+                <br />
+                <input data-ng-model="newCustomer.firstName" type="text" placeholder="First Name">
+            </div>
+            <div class="span3">
+                Last Name:
+                <br />
+                <input data-ng-model="newCustomer.lastName" type="text" placeholder="Last Name">
+            </div>
+            <div class="span6">
+                City:
+                <br />
+                <input data-ng-model="newCustomer.city" type="text" placeholder="Customer City">
+                <button id="submitCustomer" class="btn btn-primary" type="button" 
+                    data-ng-disabled="!newCustomer.firstName || !newCustomer.lastName || !newCustomer.city" 
+                    data-ng-click="insertCustomer()">Add Customer</button>
+            </div>
+        </div>-->
+        <br /><br />
+        <div class="form-group">
+                    <label> Search By name :</label>
+                    <input type="text" class="form-control"  ng-model="search.firstName">
+                    <a href="javascript:void(0);" ng-click="clearInput()">Clear</a>
+                  </div>
+
+        <div>
+            <div class="row cardContainer">
+                <div class="span3 card" data-ng-repeat="customer in filterdCustomers  = (customers | orderBy:'lastName' | filter:search)">
+                    <button class="btn close cardClose" data-ng-click="deleteCustomer(customer.id)">&times;</button>
+                    <div class="cardHeader">{{customer.firstName + ' ' + customer.lastName}}</div>
+                    <div class="cardBody">
+                    <img ng-src = "/uploads/{{customer.profile}}" width="20%" height="20%">
+                    {{customer.city}}
+                    </div>
+                    <a href="#/customerorders/{{customer.id}}" class="cardBody btn-link">View {{ customer.orders.length }} Orders</a>
+                </div>
+                 <div class="span3" style="color: red;" ng-show="!filterdCustomers.length">No Customer found.</div>
+            </div>
+        </div>
+    </div>
+</div>
